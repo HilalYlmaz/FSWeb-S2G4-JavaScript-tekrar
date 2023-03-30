@@ -29,10 +29,10 @@ function KareninAlani(kenaruzunlugu){
 			4. Hesaplanan çemberin çevresi döndürülecektir.
 		*/
 
-function CemberinCevresi(/* kodlar buraya */){
-	/* kodlar buraya */
+function CemberinCevresi(yaricap){
+	return 2*pi*yaricap;	
 }
-
+console.log (CemberinCevresi(5));
 
 /* (Oto test yok) Yukarıdaki CemberinCevresi fonksiyonunu yarıçap = 5 vererek aşağıda çalıştırıp, sonucu konsolda gözlemleyin (console.log)  */
 
@@ -47,10 +47,10 @@ function CemberinCevresi(/* kodlar buraya */){
 			4. Hesaplanan çemberin alanı döndürülecektir.
 		*/
 		
-function CemberinAlani(/* kodlar buraya */){
-	/* kodlar buraya */
+function CemberinAlani(yaricap , pi){
+	return pi*yaricap*yaricap;
 }
-
+console.log(CemberinAlani(15, pi));
 
 /* (Oto test yok) Yukarıdaki CemberinAlani fonksiyonunu yarıçap = 15 vererek aşağıda çalıştırıp, sonucu konsolda gözlemleyin (console.log)  */
 
@@ -76,37 +76,55 @@ function CemberinAlani(/* kodlar buraya */){
 	var ucetambolunenler, enkucuk, enbuyuk, ucebolunenlerintoplami, besyuzdenkucuksayilar, siralisayilar, tekraredensayilar;
 	
 	//3a çözümü
+var enbuyuk = sayilar[0];
+var enkucuk = sayilar[0];
+for(let i=0; i<sayilar.length; i++) {
+	if (sayilar[i] > enbuyuk) {
+		enbuyuk = sayilar[i];
+	}
+	if (sayilar[i] < enkucuk) {
+		enkucuk = sayilar[i];
+	}
+}
+	console.log (enbuyuk);
+	console.log(enkucuk);
 
-	/* kodlar buraya */
-	
 	
 	
 	// 3b çözümü:
-
-	/* kodlar buraya */
-		
+	var ucetambolunenler = sayilar.filter (function(sayi){
+		return sayi % 3 === 0;
+	});
+	console.log (ucetambolunenler);
 		
 		
 	//3c çözümü:
 	
-	/* kodlar buraya */
+	var ucebolunenlerintoplami = ucetambolunenler.reduce(function(toplam,sayi){
+		return toplam + sayi;
+	},0)
 
-	
+	console.log (ucebolunenlerintoplami);
 	
 	//3d çözümü
 	
-	/* kodlar buraya */
-
+	var besyuzdenkucuksayilar = sayilar.filter(function(sayi){
+		return sayi<500;
+	});
+	console.log(besyuzdenkucuksayilar);
 
 
 	//3e çözümü
 
-	/* kodlar buraya */
-	
+	var siralisayilar = besyuzdenkucuksayilar.sort(function(a,b){
+		return a-b
+	}) 
+	console.log(siralisayilar);
 	
 	//3f çözümü
 	
-	/* kodlar buraya */
+	
+	
 
 
 
